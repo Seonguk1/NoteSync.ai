@@ -1,0 +1,11 @@
+fastapi==0.115.0
+pydantic==2.8.2
+SQLAlchemy==2.0.32
+python-multipart==0.0.9
+python-dotenv==1.0.1
+faster-whisper==1.2.1
+google-genai==0.8.0
+pypdf==4.0.0
+httpx==0.28.1
+anyio==4.12.1
+typing_extensions==4.15.0

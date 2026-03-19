@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Lecture Platform - Learning View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5048e5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex flex-col h-screen overflow-hidden">
+<!-- Top Header -->
+<header class="flex h-16 items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 shrink-0">
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
+<nav class="flex items-center gap-2 text-sm font-medium"><a class="text-slate-500 hover:text-primary transition-colors" href="#">컴퓨터그래픽스</a><span class="material-symbols-outlined text-xs text-slate-400">chevron_right</span><span class="text-slate-900 dark:text-slate-100 font-semibold">2D 그래픽</span></nav>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex flex-1 overflow-hidden">
+<!-- Left: Media Viewer (70%) -->
+<section class="flex-[7] flex flex-col p-6 overflow-y-auto">
+<div class="relative w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl group">
+<!-- Lecture Slide Placeholder -->
+<div class="absolute inset-0 flex items-center justify-center bg-slate-800" data-alt="Technical presentation slide about color models and theory" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3m6E2alV5yZo5D2O1rdPFYurnkdq-sWVVu2HV-8pWkdsbn8PTte17-NcohZvb-z_s9w2jYrtNL8606FSbuldmDnT-pXlffAizfZAK6CYA4OHyiqDCkSJNFWSThmp0snLSOduCdu10RdQ3TaWmID_H3w7qQw9dQL9B_SqEdj_TeeQRNYipaBacefLKDfk-hLdo7BI8KW-no_6pHd8HUiv_K8FFMVmag3Ty0O6Riaojv4iG87m8yZLD70y8AzXUTBATFfmvxJ6DtKs'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<!-- Subtitle Overlay -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-3/4 max-w-2xl">
+<div class="bg-black/70 backdrop-blur-md text-white px-6 py-3 rounded-lg text-center text-lg font-medium border border-white/10">
+                            오늘은 컬러 모델을 배울 거고요...
+                        </div>
+</div>
+<!-- Overlay Controls (Hidden by default, shows on hover or focus) -->
+<div class="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="h-20 w-20 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-xl transform transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-5xl">play_arrow</span>
+</button>
+</div>
+</div>
+<div class="mt-6">
+<h2 class="text-2xl font-bold mb-2">Lecture 04: Understanding Digital Color Models</h2>
+<p class="text-slate-500 text-sm">Professor Dr. Sarah Jenkins • Recorded on Oct 24, 2023</p>
+</div>
+</section>
+<!-- Right: Script Panel (30%) -->
+<aside class="flex-[3] border-l border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col overflow-hidden">
+<!-- Script Search Header -->
+<div class="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center gap-3"><button class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors border border-slate-200 dark:border-slate-700" title="Collapse Sidebar">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</button>
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50 transition-all" placeholder="Search in script..." type="text"/>
+</div>
+</div>
+<!-- Script Content -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4">
+<!-- Script Block: Normal -->
+<div class="group relative p-4 rounded-xl border border-transparent hover:border-slate-100 dark:hover:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer">
+<div class="inline-flex items-center px-2 py-0.5 rounded bg-primary/10 text-primary text-xs font-bold mb-2">04:02</div>
+<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Next, we'll talk about the RGB model. As you know, screens use additive color mixing.</p>
+</div>
+<!-- Script Block: Active State -->
+<div class="relative p-4 rounded-xl bg-primary/5 border border-primary/20 shadow-sm ring-1 ring-primary/10">
+<div class="inline-flex items-center px-2 py-0.5 rounded bg-primary text-white text-xs font-bold mb-2 shadow-sm">04:15</div>
+<p class="text-sm leading-relaxed font-medium text-slate-900 dark:text-slate-100 italic">오늘은 컬러 모델을 배울 거고요, 특히 디지털 환경에서 가장 많이 사용되는 RGB와 CMYK의 차이점을 중점적으로 다루겠습니다.</p>
+<div class="absolute top-4 right-4 text-primary opacity-60">
+<span class="material-symbols-outlined text-sm">volume_up</span>
+</div>
+</div>
+<!-- Script Block: Edit Mode -->
+<div class="relative p-4 rounded-xl border border-primary/30 bg-white dark:bg-slate-800 shadow-md">
+<div class="inline-flex items-center px-2 py-0.5 rounded bg-primary/10 text-primary text-xs font-bold mb-2">04:38</div>
+<div class="flex items-center gap-2">
+<textarea class="flex-1 text-sm bg-transparent border-none p-0 focus:ring-0 resize-none leading-relaxed" rows="2">이 부분은 과제와 연관이 있으니 꼭 기억해 두시기 바랍니다. CMYK는 인쇄물 제작 시 기준이 되는 감산 혼합 방식입니다.</textarea>
+<button class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-sm">check</span>
+</button>
+</div>
+</div>
+<!-- More Script Blocks -->
+<div class="group relative p-4 rounded-xl border border-transparent hover:border-slate-100 dark:hover:border-slate-800 transition-all cursor-pointer">
+<div class="inline-flex items-center px-2 py-0.5 rounded bg-primary/10 text-primary text-xs font-bold mb-2">05:12</div>
+<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Why does a color on your monitor look different when printed on paper? That's exactly why we study these models.</p>
+</div>
+<div class="group relative p-4 rounded-xl border border-transparent hover:border-slate-100 dark:hover:border-slate-800 transition-all cursor-pointer">
+<div class="inline-flex items-center px-2 py-0.5 rounded bg-primary/10 text-primary text-xs font-bold mb-2">05:45</div>
+<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Let's look at the gamut chart here. The visible spectrum is much larger than what any device can reproduce.</p>
+</div>
+</div>
+</aside>
+</main>
+<!-- Bottom Fixed Controller -->
+<footer class="h-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex flex-col shrink-0">
+<!-- Progress Bar -->
+<div class="w-full h-1 bg-slate-100 dark:bg-slate-800 relative group cursor-pointer">
+<div class="absolute left-0 top-0 h-full bg-primary/30 w-[25%] transition-all"></div>
+<div class="absolute left-0 top-0 h-full bg-primary w-[15%] transition-all">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 h-3 w-3 bg-primary rounded-full shadow-lg scale-0 group-hover:scale-100 transition-transform"></div>
+</div>
+</div>
+<div class="flex-1 px-6 flex items-center justify-between">
+<!-- Left: Time Info -->
+<div class="flex items-center gap-2 text-sm font-semibold tabular-nums">
+<span class="text-primary">04:15</span>
+<span class="text-slate-400">/</span>
+<span class="text-slate-500">01:40:24</span>
+</div>
+<!-- Center: Playback Controls -->
+<div class="flex items-center gap-6">
+<button class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">replay_5</span>
+</button>
+<button class="h-12 w-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/30 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl">pause</span>
+</button>
+<button class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">forward_5</span>
+</button>
+</div>
+<!-- Right: Settings -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full cursor-pointer hover:bg-slate-200 transition-colors">
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">1.0x</span>
+<span class="material-symbols-outlined text-sm text-slate-400">expand_more</span>
+</div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-xl cursor-pointer">volume_up</span>
+<div class="w-20 h-1 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[70%]"></div>
+</div>
+</div>
+<button class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">fullscreen</span>
+</button>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

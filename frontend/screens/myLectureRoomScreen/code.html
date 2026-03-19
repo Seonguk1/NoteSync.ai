@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Lectures - AI Script Platform</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5048e5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .sidebar-active { background-color: rgba(80, 72, 229, 0.1); color: #5048e5; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-72 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col p-6 gap-6">
+<div class="flex flex-col gap-1"><div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<h1 class="text-xl font-bold tracking-tight text-primary">My Lectures</h1>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-widest">AI Script Platform</p>
+</div>
+<button class="p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-600 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+</div></div>
+<nav class="flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<p class="px-3 text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">Menu</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg sidebar-active font-medium" href="#">
+<span class="material-symbols-outlined text-[22px]">description</span>
+<span class="text-sm">All Lectures</span>
+</a>
+<a aria-disabled="true" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 dark:text-slate-500 cursor-not-allowed font-medium" href="#">
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="text-sm">Starred (MVP 제외)</span>
+</a>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between px-3 mb-2">
+<p class="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Folders</p>
+<span class="material-symbols-outlined text-[16px] cursor-pointer text-slate-400 hover:text-primary">create_new_folder</span>
+</div>
+<div class="flex flex-col gap-0.5"><div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 transition-colors text-sm">
+<span class="material-symbols-outlined text-[20px] text-slate-400">folder</span>
+<input class="w-full bg-white dark:bg-slate-800 border border-primary rounded px-2 py-0.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary placeholder:text-slate-400 text-slate-400" placeholder="새로운 폴더" type="text" value="새로운 폴더"/>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">folder</span>
+<span>Computer Architecture</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">folder</span>
+<span>Algorithm</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">folder</span>
+<span>Operating System</span>
+</a>
+</div>
+</div>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 px-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xs">JD</div>
+<div class="flex flex-col min-w-0">
+<p class="text-sm font-semibold truncate">Jane Doe</p>
+<p class="text-[11px] text-slate-500 truncate">Pro Account</p>
+</div>
+<span class="material-symbols-outlined text-[20px] ml-auto text-slate-400 cursor-pointer">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 overflow-y-auto">
+<!-- Header -->
+<header class="flex items-center justify-between px-8 py-6 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<h2 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">All Lectures</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-xs font-bold">128</span>
+</div>
+<button class="flex items-center justify-center gap-2 py-2.5 px-5 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold transition-all shadow-sm text-sm">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>New Lecture Upload</span>
+</button></header>
+<!-- Table Container -->
+<div class="p-8">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Title</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Length</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Created Date</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Completed Item -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer bg-slate-100/80 dark:bg-slate-800/50">
+<td class="px-6 py-5">
+<div class="flex flex-col gap-2">
+<span class="text-base font-bold text-slate-900 dark:text-slate-100">Process Scheduling Techniques</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400 font-medium tracking-tight">45:20</td>
+<td class="px-6 py-5 text-sm text-slate-500 dark:text-slate-500"><div class="flex items-center justify-between gap-4">
+<span class="text-sm text-slate-500 dark:text-slate-500">2023. 10. 24. 오후 9:31</span>
+<div class="relative">
+<button class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-[20px] block">more_vert</span>
+</button>
+<!-- Dropdown Menu -->
+<div class="absolute right-0 mt-2 w-48 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 z-20 py-1.5 overflow-hidden">
+<button class="w-full flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-slate-400">edit</span>
+<span>이름 변경하기</span>
+</button>
+<button class="w-full flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-slate-400">drive_file_move</span>
+<span>폴더 이동하기</span>
+</button>
+<div class="h-px bg-slate-100 dark:bg-slate-800 my-1"></div>
+<button class="w-full flex items-center gap-3 px-4 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-red-500">delete</span>
+<span>삭제하기</span>
+</button>
+</div>
+</div>
+</div></td>
+</tr>
+<!-- In Progress Item -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer">
+<td class="px-6 py-5">
+<div class="flex flex-col gap-2">
+<span class="text-base font-semibold text-slate-400 dark:text-slate-500">Memory Management Deep Dive</span>
+<div class="flex items-center gap-3">
+<div class="w-32 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[45%]"></div>
+</div>
+<span class="text-[10px] font-bold text-primary uppercase">Extracting... 45%</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-slate-300 dark:text-slate-600 font-medium tracking-tight">32:15</td>
+<td class="px-6 py-5 text-sm text-slate-300 dark:text-slate-700"><div class="flex items-center justify-between gap-4"><span class="text-sm text-slate-300 dark:text-slate-700">2023. 10. 25. 오후 2:15</span><button class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 transition-colors"><span class="material-symbols-outlined text-[20px] block">more_vert</span></button></div></td>
+</tr>
+<!-- Completed Item 2 -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer">
+<td class="px-6 py-5">
+<div class="flex flex-col gap-2">
+<span class="text-base font-bold text-slate-900 dark:text-slate-100">B-Trees and Indexing</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400 font-medium tracking-tight">58:00</td>
+<td class="px-6 py-5 text-sm text-slate-500 dark:text-slate-500"><div class="flex items-center justify-between gap-4"><span class="text-sm text-slate-500 dark:text-slate-500">2023. 10. 22. 오전 11:45</span><button class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 transition-colors"><span class="material-symbols-outlined text-[20px] block">more_vert</span></button></div></td>
+</tr>
+<!-- Completed Item 3 -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer">
+<td class="px-6 py-5">
+<div class="flex flex-col gap-2">
+<span class="text-base font-bold text-slate-900 dark:text-slate-100">Cache Coherence Protocols</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400 font-medium tracking-tight">41:10</td>
+<td class="px-6 py-5 text-sm text-slate-500 dark:text-slate-500"><div class="flex items-center justify-between gap-4"><span class="text-sm text-slate-500 dark:text-slate-500">2023. 10. 20. 오후 4:20</span><button class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 transition-colors"><span class="material-symbols-outlined text-[20px] block">more_vert</span></button></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination/Load more (Optional but good for SaaS look) -->
+</div>
+</main>
+</div>
+</body></html>

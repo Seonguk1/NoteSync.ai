@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Lectures Dashboard - New Upload</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5048e5",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }</script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<!-- Dashboard Background (Underlay) -->
+<div class="relative flex h-screen w-full flex-col overflow-hidden blur-sm pointer-events-none select-none">
+<div class="layout-container flex h-full grow flex-col">
+<div class="lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">My Lectures</h2>
+</div>
+<div class="flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium" href="#">Courses</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium" href="#">Settings</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 bg-slate-200" data-alt="User profile avatar placeholder"></div>
+</div>
+</header>
+<div class="flex flex-wrap justify-between gap-3 p-4 pt-8">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-slate-900 dark:text-slate-100 text-4xl font-black tracking-tight">My Lectures</p>
+<p class="text-slate-500 dark:text-slate-400 text-base">Manage and upload your lecture materials.</p>
+</div>
+</div>
+<div class="px-4 py-3">
+<div class="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800">
+<tr>
+<th class="px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-300">Lecture Name</th>
+<th class="px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-300">Date</th>
+<th class="px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-300">Status</th>
+<th class="px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-300">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-4 py-4 text-sm">Introduction to AI</td>
+<td class="px-4 py-4 text-sm text-slate-500">2023-10-01</td>
+<td class="px-4 py-4 text-sm"><span class="px-2 py-1 bg-green-100 text-green-700 rounded-lg text-xs font-bold uppercase">Completed</span></td>
+<td class="px-4 py-4 text-sm text-primary font-bold">View</td>
+</tr>
+<tr>
+<td class="px-4 py-4 text-sm">Advanced UX Design</td>
+<td class="px-4 py-4 text-sm text-slate-500">2023-10-05</td>
+<td class="px-4 py-4 text-sm"><span class="px-2 py-1 bg-primary/10 text-primary rounded-lg text-xs font-bold uppercase">Processing</span></td>
+<td class="px-4 py-4 text-sm text-primary font-bold">View</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+<!-- Modal Card -->
+<div class="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Close Button -->
+<button class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="p-8 md:p-10">
+<!-- Header -->
+<div class="mb-8">
+<h2 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight mb-2">새 강의 업로드</h2>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed">강의 미디어를 업로드하면 AI가 텍스트 스크립트를 추출하고 동기화합니다.</p>
+</div>
+<!-- Form -->
+<div class="space-y-6">
+<!-- Grid Inputs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">강의명</label>
+<input class="w-full px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400" placeholder="예: 인공지능 입문" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">세부 주제</label>
+<input class="w-full px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400" placeholder="예: 머신러닝 기초" type="text"/>
+</div>
+</div>
+<!-- Segmented Control -->
+<!-- Upload Zone -->
+<div class="relative group cursor-pointer">
+<div class="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50/50 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-primary/50 transition-all">
+<div class="bg-primary/10 p-4 rounded-full mb-3 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">upload_file</span>
+</div>
+<p class="text-slate-700 dark:text-slate-200 font-semibold mb-1">스크립트를 추출할 영상 또는 음성 파일을 드래그하여 업로드하세요</p>
+<p class="text-slate-400 text-sm">MP4, MKV, MP3, WAV 지원 (최대 2GB)</p>
+</div>
+<input accept="video/*,audio/*" class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div><div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">강의 자료 (선택 사항)</label>
+<div class="relative group cursor-pointer">
+<div class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50/50 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-primary/50 transition-all">
+<div class="bg-slate-100 dark:bg-slate-700 p-2.5 rounded-full mb-2 text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">attachment</span>
+</div>
+<p class="text-slate-600 dark:text-slate-300 font-medium text-sm mb-1">참고용 강의 자료를 업로드하세요</p>
+<p class="text-slate-400 text-xs">PDF만 지원 (최대 100MB)</p>
+</div>
+<input accept="application/pdf,.pdf" class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="pt-4 space-y-4">
+<button class="w-full py-4 bg-gradient-to-r from-primary to-[#6366f1] text-white font-bold text-lg rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-[0.98] transition-all">
+                            스크립트 추출 시작
+                        </button>
+<div class="flex items-center justify-center gap-2 text-slate-400 dark:text-slate-500 text-xs">
+<span class="material-symbols-outlined text-sm">info</span>
+<span>파일 용량에 따라 추출에 수 분이 소요될 수 있습니다.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
