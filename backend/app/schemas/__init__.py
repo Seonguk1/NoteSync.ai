@@ -1,0 +1,51 @@
+# app/schemas/__init__.py
+
+from app.schemas.academic import (
+    TermCreate,
+    TermRead,
+    TermUpdate,
+    CourseCreate,
+    CourseRead,
+    CourseUpdate,
+    SessionCreate,
+    SessionRead,
+    SessionUpdate,
+)
+from app.schemas.content import (
+    MaterialRead,
+    MaterialUploadResponse,
+    MaterialUpdate,
+    TranscriptRead,
+    TranscriptUpdate,
+    KeywordRead,
+    NoteCreate,
+    NoteRead,
+    NoteUpdate,
+    AnnotationCreate,
+    AnnotationRead,
+    AnnotationUpdate,
+)
+
+__all__ = [
+    "TermCreate",
+    "TermRead",
+    "TermUpdate",
+    "CourseCreate",
+    "CourseRead",
+    "CourseUpdate",
+    "SessionCreate",
+    "SessionRead",
+    "SessionUpdate",
+    "MaterialRead",
+    "MaterialUploadResponse",
+    "MaterialUpdate",
+    "TranscriptRead",
+    "TranscriptUpdate",
+    "KeywordRead",
+    "NoteCreate",
+    "NoteRead",
+    "NoteUpdate",
+    "AnnotationCreate",
+    "AnnotationRead",
+    "AnnotationUpdate",
+]

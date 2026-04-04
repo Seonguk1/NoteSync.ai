@@ -1,0 +1,74 @@
+# ==========================================
+# Frontend (Node.js / React)
+# ==========================================
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ==========================================
+# Backend (Python / FastAPI)
+# ==========================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+ENV/
+
+# Secrets and Configs
+.env
+.env.*
+secrets.json
+
+# ==========================================
+# Project Specific (NoteSync.ai)
+# ==========================================
+# SQLite Database
+*.db
+*.sqlite3
+data/scholar.db
+
+# Uploaded Materials & Processed Media
+data/
+
+# ==========================================
+# Desktop App (Tauri / Rust)
+# ==========================================
+src-tauri/target/
+backend_log.txt
+
+# ==========================================
+# Build Artifacts & Binaries
+# ==========================================
+backend/build/
+*.exe
+src-tauri/binaries/
+src-tauri/bundle-resources/
+backend/test_audio.mp3
+backend/test_doc.pdf
